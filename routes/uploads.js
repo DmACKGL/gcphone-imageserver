@@ -30,7 +30,7 @@ router.post('/upload', upload.single('image'), function(req, res, next) {
     ContentType: 'image/jpeg',
     Body: req.file.buffer,
     ACL: 'public-read',
-    Key: uuidv4(),
+    Key: uuidv4()+'.jpg',
   };
 
   space.upload(uploadParameters, function (error, data) {
